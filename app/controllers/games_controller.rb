@@ -21,7 +21,7 @@ class GamesController < ApplicationController
     if @dictionary['found'] && valid_word?(word, @letters)
       @sucess = "<strong>Congratulations! </strong>#{word} is a valid english word".html_safe
     elsif @dictionary['found'] && !valid_word?(word, @letters)
-      @cant_build_word = "<strong>Sorry but</strong>  #{word} can't be built out of #{@letters}".html_safe
+      @cant_build_word = "<strong>Sorry but</strong>  #{word} can't be built out of #{@letters.join(" ")}".html_safe
     else
       @not_eng_word = "<strong>Sorry,</strong> #{word} is not a valid English word".html_safe
     end
